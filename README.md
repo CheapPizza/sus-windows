@@ -10,7 +10,7 @@ This program automatically mutes the Windows System Sounds every minute. It uses
 
 1. **Clone or Download the Repository**
    ```
-   git clone https://github.com/yourusername/sus-windows.git
+   git clone https://github.com/CheapPizza/sus-windows
    cd sus-windows
    ```
 
