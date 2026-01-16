@@ -1,4 +1,4 @@
-# Shut Up System (Windows)
+# Shut Up System Windows
 
 This program automatically mutes the Windows System Sounds every minute. It uses the [pycaw](https://github.com/AndreMiras/pycaw) library to control audio sessions and sets the System Sounds volume to zero if it is not already muted.
 
@@ -52,8 +52,8 @@ To run the script automatically on startup:
 4. On the Trigger page select "When I log on"
 5. On the Action page select "Start a program"
 6. Select shutup.bat using the file browser
-7. Just click Finish and you are done
-Optional  
+7. Just click Finish and you are done  
+(Optional)  
 8. Go to the Task Scheduler Library tab and refresh to check that the new task is running
 9. Log in and out and check system volume. It should be 0
 10. Increase the volume and verify that it goes back to 0 (this may take up to a minute)
