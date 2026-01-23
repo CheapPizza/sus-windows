@@ -34,31 +34,35 @@ This program automatically mutes the Windows System Sounds every minute. It uses
    pip install -r requirements.txt
    ```
 
-5. **Edit the Batch File**
-   Open `shutup.bat` and make sure the paths point to your repository and virtual environment location:
-   ```bat
-   cd /d "C:\Users\YourUsername\Documents\sus-windows"
-   call .venv\Scripts\activate.bat
-   pythonw shut-up-system-windows.py
-   ```
-
 ## Running Automatically with Task Scheduler
 
-To run the script automatically on startup:
+To run the script automatically on startup **without a visible window**:
 
 1. Open Task Scheduler
 2. Action => Create Basic Task...
-3. Give it a name and desciprtion
+3. Give it a name and description
 4. On the Trigger page select "When I log on"
 5. On the Action page select "Start a program"
-6. Select shutup.bat using the file browser
-7. Just click Finish and you are done  
+6. For **Program/script**, browse to and select your `pythonw.exe` inside the virtual environment, for example:
+   ```
+   C:\Users\YourUsername\Documents\sus-windows\.venv\Scripts\pythonw.exe
+   ```
+7. For **Add arguments (optional)**, enter:
+   ```
+   shut-up-system-windows.py
+   ```
+8. For **Start in (optional)**, enter:
+   ```
+   C:\Users\YourUsername\Documents\sus-windows
+   ```
+9. Click Finish
+
 (Optional)  
-8. Go to the Task Scheduler Library tab and refresh to check that the new task is running
-9. Log in and out and check system volume. It should be 0
-10. Increase the volume and verify that it goes back to 0 (this may take up to a minute)
+10. Go to the Task Scheduler Library tab and refresh to check that the new task is running  
+11. Log in and out and check system volume. It should be 0  
+12. Increase the volume and verify that it goes back to 0 (this may take up to a minute)
 
 ## Troubleshooting
 - Ensure your virtual environment is activated and dependencies are installed.
 - If the script does not mute system sounds, check that `pycaw` is installed and working.
-- Make sure the batch file paths are correct for your system.
+- Make sure the paths in Task Scheduler are correct for your system.
